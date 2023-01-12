@@ -11,6 +11,7 @@ export default function AuthorCard({ authorObj, onUpdate }) {
       deleteAuthorBooks(authorObj.firebaseKey).then(() => onUpdate());
     }
   };
+
   return (
     <Card style={{ width: '18rem', margin: '10px' }}>
       <Card.Img variant="top" src={authorObj.image} alt={authorObj.first_name} style={{ height: '400px' }} />

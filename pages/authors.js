@@ -4,15 +4,16 @@ import AuthorCard from '../components/AuthorCard';
 import { useAuth } from '../utils/context/authContext';
 
 export default function ShowAuthors() {
-  const { user } = useAuth();
   const [authors, setAuthors] = useState([]);
+  const { user } = useAuth();
 
   const getAllAuthors = () => {
     getAuthors(user.uid).then(setAuthors);
   };
 
   useEffect(() => {
-    getAuthors();
+    getAllAuthors();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
